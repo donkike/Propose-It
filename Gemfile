@@ -9,6 +9,7 @@ gem 'rails', '3.0.5'
 gem 'sqlite3'
 gem 'omniauth'
 gem 'make_permalink'
+gem 'jquery-rails'
 gem "nifty-generators", :group => :development
 
 # Use unicorn as the web server
