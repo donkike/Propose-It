@@ -1,2 +1,40 @@
-<h1>Proposals#index</h1>
-<p>Find me in app/views/proposals/index.html.erb</p>
+<div id="proposals">
+  <% 5.times do %>
+    <div class="proposal">
+      
+      <div class="actions">
+        <span class="preview"> preview </span>
+        <span class="support"> support </span>
+      </div> <!-- End of actions div-->
+      
+      <div class="info">
+        <div class="left"><%= image_tag avatar_url(current_user), :class => "bordered" %></div>
+        <div class="rleft">
+          <h1><%= link_to "Whatever floats your boat", '#' %></h1>
+          <p class="gray">
+            <span>Nicolás Hock Isaza</span>
+            <span>(<%= link_to "10 comments", '#' %>)</span>
+          </p>
+        </div> <!-- End of rleft div -->
+        <%= clear %>
+      </div> <!-- End of info div -->
+      
+      
+      <div class="supporters">
+        <% (rand * 10).to_i.times do %>
+          <span class="supporter">
+            <%= image_tag avatar_url(current_user, :size => 32), :class => "bordered", :width => "32", :height => "32", :alt => "#{current_user.name} supports this", :title => "#{current_user.name} supports this" %>
+          </span>
+        <% end %>
+      </div>
+      
+      
+    </div>
+    <%= clear %>
+  <% end %>
+</div>
+
+
+<div class="centered">
+  <h1>Propose-it is powered by Kikin</h1>
+</div>

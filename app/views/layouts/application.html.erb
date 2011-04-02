@@ -2,13 +2,44 @@
 <html>
 <head>
   <title>ProposeIt</title>
-  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag "reset", "text", "formalize", "zinergia" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 
-<%= yield %>
+<div id="wrapper" class="group">
+  
+  <div id="header">
+  <div class="right" id="user-session">
+    <div class="left"><%= image_tag avatar_url(current_user), :class => "bordered" %></div>
+    
+    <div class="rleft centered">
+      <p>
+        <%= current_user.name %> <br />
+        <%= link_to "Logout", logout_path %>
+      </p>
+    </div>
+    <%= clear %>
+  </div> <!-- End of user-session div-->
+  
+  
+  
+  <div id="logo">
+    Propose-it
+  </div>
+  
+  <%= clear %>
+</div>
+  
+  
+  <div id="content">
+    <%= yield %>
+  </div>
+</div>
+
+
+
 
 </body>
 </html>

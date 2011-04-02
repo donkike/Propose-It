@@ -1,6 +1,15 @@
 ProposeIt::Application.routes.draw do
   
+  get "session/create"
+
+  get "session/destroy"
+
   resources :proposals
+  
+  match "/login" => "sessions#new", :as => :login
+
+  match "/auth/:provider/callback" => "sessions#create"
+  match "/signout" => "sessions#destroy", :as => :logout  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

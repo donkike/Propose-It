@@ -10,12 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110402161024) do
+ActiveRecord::Schema.define(:version => 20110402174823) do
 
   create_table "proposals", :force => true do |t|
     t.string   "title",                              :null => false
     t.text     "description",                        :null => false
     t.string   "status",      :default => "pending", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "avatar_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
