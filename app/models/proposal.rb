@@ -9,7 +9,7 @@ class Proposal < ActiveRecord::Base
   validates_inclusion_of :status, :in => Proposal::STATUS
   
   def self.translated_status
-    Proposal::STATUS.map{|st| I18n.t("proposals.stats.#{st}".to_sym)}
+    Proposal::STATUS.map{|st| I18n.t("proposals.status.#{st}".to_sym)}
   end
       
 end
